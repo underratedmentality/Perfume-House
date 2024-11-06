@@ -1,6 +1,6 @@
 import React from 'react'
 import Header from '../components/Header'
-import AllPerfumes from '../components/Allperfumes'
+import AllPerfumes from '../components/AllPerfumes'
 import Cart from '../components/Cart'
 
 const HomePage = () => {
