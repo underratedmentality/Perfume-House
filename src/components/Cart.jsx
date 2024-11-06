@@ -19,7 +19,7 @@ function Cart ({id,title,image,rating,price,oldPrice,itemsLeft}){
   };
   return (
     <div
-      style={{ border: "1px solid #D0D0D0", width: "400px" }}
+      style={{ border: "1px solid #D0D0D0", width: "350px" }}
       className="container py-4 mt-5 mt-lg-0 "
     >
       <h4 className="fw-bold">My Cart Preview</h4>
