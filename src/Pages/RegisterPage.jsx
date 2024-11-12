@@ -11,25 +11,27 @@ const RegisterPage = () => {
   const [confirmPassword, setConfirmPassword] = useState ("")
   const [agree, setAgree] = useState (false)
   const [error, setError] = useState ("")
+  const [alert, setAlert] = useState ("")
   const [passwordError, setPasswordError] = useState ("")
   const redirect = useNavigate ()
   const handleCheckBoxChange = (e) => {
     setAgree (e.target.checked)
-    if (!agree) {
-     return  setAgree ("You must agree to terms and conditions");
-    }
+    return alert ("You must agree to terms and conditions");
+    
   }
 const handleSubmit = (e) => {
 e.preventDefault()
 console.log(firstName, lastName, email, password, confirmPassword);
 if (!firstName.trim() || !lastName.trim() || !email.trim() || !password.trim() || !confirmPassword.trim() || !agree){
   setError ("input fields are required")
-}else {
-  redirect ("/")
-}
-if (!password === confirmPassword) {
+}else if (password !== confirmPassword) {
   setPasswordError ("password doesn't match")
+} else if (!agree) {
+alert ("You must agree to terms and")
 }
+ else {
+  redirect ("/")
+} 
 
 }
   return (
@@ -86,7 +88,7 @@ if (!password === confirmPassword) {
         <label htmlFor="agree" className='form-check-label'>
           I agree to <span style={{color:"#8D34FF"}}>Terms of Service</span> and <span style={{color:"#8D34FF"}}>Privacy  <br /> Policies</span>
         </label>
-        <p className='text-danger'>{agree}</p>
+        <p className='text-danger'>{alert}</p>
        </div>
         <button type='submit' style={{backgroundColor:"#8D34FF", height:"64px", border:"0px", borderRadius:"10px"}} className='w-100 text-white' >SIgn Up</button>
         <p style={{textAlign:"center", marginTop:"20px"}}>Or</p>

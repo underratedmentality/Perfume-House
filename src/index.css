@@ -39,3 +39,6 @@
   height: 100vh;
   align-items: center;
 }
+p > span {
+  color: #8D34FF;
+}
