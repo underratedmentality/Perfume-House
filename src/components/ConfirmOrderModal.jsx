@@ -1,5 +1,5 @@
 import React from 'react'
-import Modal  from 'react-bootstrap/modal'
+import Modal  from 'react-bootstrap/Modal'
 import { IoCheckmarkCircle } from "react-icons/io5";
 import { FaXmark } from "react-icons/fa6";
 import { TiThLarge } from 'react-icons/ti';
